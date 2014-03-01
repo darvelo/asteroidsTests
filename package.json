@@ -1,0 +1,14 @@
+{
+  "name": "asteroidsTests",
+  "version": "0.0.0",
+  "description": "Progressive projects in practicing Processing",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Arvelo",
+  "license": "BSD",
+  "dependencies": {
+    "express": "~3.3.5"
+  }
+}

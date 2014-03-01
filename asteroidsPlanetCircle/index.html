@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Asteroids</title>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    html * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <script src="/js/libs/jquery-1.10.2.min.js"></script>
+  <script src="/js/libs/processing-1.4.1-min.js"></script>
+  <canvas id="canvas" data-processing-sources="asteroidsPlanetCircle.pde keyPresses.pde">You need a browser that supports canvas to see the image.</canvas>
+  <script>
+    var processingInstance;
+
+    function getInstanceOnload () {
+      processingInstance = Processing.getInstanceById('canvas');
+
+      if (!processingInstance) {
+        setTimeout(getInstanceOnload, 100);
+      } else {
+        resizeCanvas();
+        $(window).resize(resizeCanvas);
+      }
+    }
+
+    function resizeCanvas () {
+      var width = $(window).width();
+      var height = $(window).height();
+
+      processingInstance.size(width, height);
+    }
+
+    $(document).ready(function () {
+      getInstanceOnload();
+    });
+  </script>
+</html>
